@@ -1,0 +1,120 @@
+﻿@model CustomerProfile
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: auto;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #4a4a4a;
+        font-size: 24px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="file"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #dcdcdc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .form-group button {
+        width: 100%;
+        background-color: #5cb85c;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .form-group button:hover {
+        background-color: #4cae4c;
+    }
+
+    .form-divider {
+        margin: 20px 0;
+        height: 1px;
+        background-color: #e0e0e0;
+    }
+</style>
+
+<div class="container">
+    <h2>Upload Image</h2>
+    <form asp-action="UploadImage" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="file" name="file" />
+        </div>
+        <div class="form-group">
+            <button type="submit">Upload Image</button>
+        </div>
+    </form>
+
+    <div class="form-divider"></div>
+
+    <h2>Add Customer Profile</h2>
+    <form asp-action="AddCustomerProfile" method="post">
+        <div class="form-group">
+            <input type="text" name="FirstName" placeholder="First Name" />
+        </div>
+        <div class="form-group">
+            <input type="text" name="LastName" placeholder="Last Name" />
+        </div>
+        <div class="form-group">
+            <input type="email" name="Email" placeholder="Email" />
+        </div>
+        <div class="form-group">
+            <input type="text" name="PhoneNumber" placeholder="Phone Number" />
+        </div>
+        <div class="form-group">
+            <button type="submit">Add Profile</button>
+        </div>
+    </form>
+
+    <div class="form-divider"></div>
+
+    <h2>Process Order</h2>
+    <form asp-action="ProcessOrder" method="post">
+        <div class="form-group">
+            <input type="text" name="orderId" placeholder="Order ID" />
+        </div>
+        <div class="form-group">
+            <button type="submit">Process Order</button>
+        </div>
+    </form>
+
+    <div class="form-divider"></div>
+
+    <h2>Upload Contract</h2>
+    <form asp-action="UploadContract" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="file" name="file" />
+        </div>
+        <div class="form-group">
+            <button type="submit">Upload Contract</button>
+        </div>
+    </form>
+</div>
